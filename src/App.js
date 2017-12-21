@@ -27,8 +27,7 @@ class Parent extends Component {
 
   handleClick = () => {
     this.setState({clicks: this.state.clicks + 1})
-    this.forceUpdate()
-    // this.setState({clicks: this.state.clicks + 1})
+    // this.forceUpdate()
     // this.setState((prevState) => ({
     //   clicks: prevState.clicks + 1
     // }))
