@@ -9,6 +9,11 @@ class Modal extends Component {
     this.portalDiv = portalDiv
   }
 
+  shouldComponentUpdate() {
+    console.log('call souldComponentUpdate')
+    return true
+  }
+
   render() {
     return ReactDOM.createPortal(
       this.props.children,
@@ -21,9 +26,20 @@ class Parent extends Component {
   state = {clicks: 0}
 
   handleClick = () => {
-    this.setState((prevState) => ({
-      clicks: prevState.clicks + 1
-    }))
+    this.setState({clicks: this.state.clicks + 1})
+    this.forceUpdate()
+    // this.setState({clicks: this.state.clicks + 1})
+    // this.setState((prevState) => ({
+    //   clicks: prevState.clicks + 1
+    // }))
+    // this.setState((prevState) => ({
+    //   clicks: prevState.clicks + 1
+    // }))
+  }
+
+  shouldComponentUpdate() {
+    console.log('call souldComponentUpdate')
+    return true
   }
 
   render() {
